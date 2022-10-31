@@ -1,0 +1,25 @@
+def perfect_num():
+    divisors = []
+    sum_divisors = 0
+    while True:
+        n = input("Enter number: ")
+        if n.isnumeric() == True:
+            if int(n) > 0:
+                for i in range(1, int(n)):
+                    if int(n) % i == 0:
+                        divisors.append(str(i))
+                        sum_divisors += i
+                if sum_divisors == int(n):
+                    str_divisors = ",".join(divisors)
+                    print(True, ". The divisors of", str(n), "is", str_divisors)
+                    print("sum of divisors is", sum_divisors)
+                else:
+                    print(False)
+
+            else:
+                print("number entered is too small")
+            break
+        else:
+            print("Not number")
+
+perfect_num()
